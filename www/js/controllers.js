@@ -136,7 +136,7 @@ function ($scope, $stateParams) {
 
 }])
    
-.controller('QACtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('page20Ctrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
@@ -155,74 +155,29 @@ function ($scope, $stateParams) {
 .controller('CCtrl', ['$scope', '$stateParams', '$firebaseArray', function ($scope, $stateParams, $firebaseArray) {
 
   
-    $scope.data = {
-        'id': '0',
-        'domanda1': '',
-        'risposta10': '',
-        'risposta11': '',
-        'risposta12': '',
-        'risposta13': '',
-        'risposta14': '',
-        'domanda2': '',
-        'risposta20': '',
-        'risposta21': '',
-        'risposta22': '',
-        'risposta23': '',
-        'risposta24': '',
-        'domanda3': '',
-        'risposta30': '',
-        'risposta31': '',
-        'risposta32': '',
-        'risposta33': '',
-        'risposta34': '',
-        'domanda4': '',
-        'risposta40': '',
-        'risposta41': '',
-        'risposta42': '',
-        'risposta43': '',
-        'risposta44': ''
-
-    }
+  $scope.data = {
+    'message': ''
     
-      var ref = firebase.database().ref().child("Imelda");
-      // create a synchronized array
-      $scope.messages = $firebaseArray(ref);
+
+}
+
+  var ref = firebase.database().ref().child("messages2");
+  // create a synchronized array
+  $scope.messages = $firebaseArray(ref);
+  
+  // add new items to the array
+  // the message is automatically added to our Firebase database!
+  $scope.addMessage = function() {
+    $scope.messages.$add({
+        text: $scope.data.message,
+        que2: $scope.data.message
+     
+   
       
-      // add new items to the array
-      // the message is automatically added to our Firebase database!
-      $scope.addMessage = function() {
-        $scope.messages.$add({
-            id: $scope.data.id++,
-          que1: $scope.data.domanda1,
-          ans10: $scope.data.risposta10,
-          ans11: $scope.data.risposta11,
-          ans12: $scope.data.risposta12,
-          ans13: $scope.data.risposta13,
-          ans14: $scope.data.risposta14,
-          que2: $scope.data.domanda2,
-          ans20: $scope.data.risposta20,
-          ans21: $scope.data.risposta21,
-          ans22: $scope.data.risposta22,
-          ans23: $scope.data.risposta23,
-          ans24: $scope.data.risposta24,
-          que3: $scope.data.domanda3,
-          ans30: $scope.data.risposta30,
-          ans31: $scope.data.risposta31,
-          ans32: $scope.data.risposta32,
-          ans33: $scope.data.risposta33,
-          ans34: $scope.data.risposta34,
-           que4: $scope.data.domanda4,
-          ans40: $scope.data.risposta40,
-          ans41: $scope.data.risposta41,
-          ans42: $scope.data.risposta42,
-          ans43: $scope.data.risposta43,
-          ans44: $scope.data.risposta44
-          
-          
-        });
-        
-
-
+      
+    });
+    
+$scope.data.message = '';
 
       };
 
@@ -232,7 +187,8 @@ function ($scope, $stateParams) {
 .controller('ACtrl', ['$scope', '$stateParams', '$firebaseArray', function ($scope, $stateParams, $firebaseArray) {
 
   
-    $scope.data = {
+    
+      $scope.data = {
         'id': '0',
         'domanda1': '',
         'risposta10': '',
@@ -259,9 +215,12 @@ function ($scope, $stateParams) {
         'risposta43': '',
         'risposta44': ''
 
+    
+        
+
     }
     
-      var ref = firebase.database().ref().child("Imelda1");
+      var ref = firebase.database().ref().child("messages");
       // create a synchronized array
       $scope.messages = $firebaseArray(ref);
       
@@ -269,36 +228,36 @@ function ($scope, $stateParams) {
       // the message is automatically added to our Firebase database!
       $scope.addMessage = function() {
         $scope.messages.$add({
-            id: $scope.data.id++,
-          que1: $scope.data.domanda1,
-          ans10: $scope.data.risposta10,
-          ans11: $scope.data.risposta11,
-          ans12: $scope.data.risposta12,
-          ans13: $scope.data.risposta13,
-          ans14: $scope.data.risposta14,
-          que2: $scope.data.domanda2,
-          ans20: $scope.data.risposta20,
-          ans21: $scope.data.risposta21,
-          ans22: $scope.data.risposta22,
-          ans23: $scope.data.risposta23,
-          ans24: $scope.data.risposta24,
-          que3: $scope.data.domanda3,
-          ans30: $scope.data.risposta30,
-          ans31: $scope.data.risposta31,
-          ans32: $scope.data.risposta32,
-          ans33: $scope.data.risposta33,
-          ans34: $scope.data.risposta34,
-           que4: $scope.data.domanda4,
-          ans40: $scope.data.risposta40,
-          ans41: $scope.data.risposta41,
-          ans42: $scope.data.risposta42,
-          ans43: $scope.data.risposta43,
-          ans44: $scope.data.risposta44
-          
-          
-        });
+          id: $scope.data.id++,
+        que1: $scope.data.domanda1,
+        ans10: $scope.data.risposta10,
+        ans11: $scope.data.risposta11,
+        ans12: $scope.data.risposta12,
+        ans13: $scope.data.risposta13,
+        ans14: $scope.data.risposta14,
+        que2: $scope.data.domanda2,
+        ans20: $scope.data.risposta20,
+        ans21: $scope.data.risposta21,
+        ans22: $scope.data.risposta22,
+        ans23: $scope.data.risposta23,
+        ans24: $scope.data.risposta24,
+        que3: $scope.data.domanda3,
+        ans30: $scope.data.risposta30,
+        ans31: $scope.data.risposta31,
+        ans32: $scope.data.risposta32,
+        ans33: $scope.data.risposta33,
+        ans34: $scope.data.risposta34,
+         que4: $scope.data.domanda4,
+        ans40: $scope.data.risposta40,
+        ans41: $scope.data.risposta41,
+        ans42: $scope.data.risposta42,
+        ans43: $scope.data.risposta43,
+        ans44: $scope.data.risposta44
         
-
+        
+      });
+        
+$scope.data.message = '';
 
 
       };
@@ -309,84 +268,76 @@ function ($scope, $stateParams) {
 .controller('BCtrl', ['$scope', '$stateParams', '$firebaseArray', function ($scope, $stateParams, $firebaseArray) {
 
   
-    $scope.data = {
-        'id': '0',
-        'domanda1': '',
-        'risposta10': '',
-        'risposta11': '',
-        'risposta12': '',
-        'risposta13': '',
-        'risposta14': '',
-        'domanda2': '',
-        'risposta20': '',
-        'risposta21': '',
-        'risposta22': '',
-        'risposta23': '',
-        'risposta24': '',
-        'domanda3': '',
-        'risposta30': '',
-        'risposta31': '',
-        'risposta32': '',
-        'risposta33': '',
-        'risposta34': '',
-        'domanda4': '',
-        'risposta40': '',
-        'risposta41': '',
-        'risposta42': '',
-        'risposta43': '',
-        'risposta44': '',
-        'domanda5': '',
-        'risposta50': '',
-        'risposta51': '',
-        'risposta52': '',
-        'risposta53': '',
-        'risposta54': ''
-
-    }
+  $scope.data = {
+    'id': '0',
+    'domanda1': '',
+    'risposta10': '',
+    'risposta11': '',
+    'risposta12': '',
+    'risposta13': '',
+    'risposta14': '',
+    'domanda2': '',
+    'risposta20': '',
+    'risposta21': '',
+    'risposta22': '',
+    'risposta23': '',
+    'risposta24': '',
+    'domanda3': '',
+    'risposta30': '',
+    'risposta31': '',
+    'risposta32': '',
+    'risposta33': '',
+    'risposta34': '',
+    'domanda4': '',
+    'risposta40': '',
+    'risposta41': '',
+    'risposta42': '',
+    'risposta43': '',
+    'risposta44': ''
     
-      var ref = firebase.database().ref().child("Imelda2");
-      // create a synchronized array
-      $scope.messages = $firebaseArray(ref);
+
+}
+
+  var ref = firebase.database().ref().child("messages1");
+  // create a synchronized array
+  $scope.messages = $firebaseArray(ref);
+  
+  // add new items to the array
+  // the message is automatically added to our Firebase database!
+  $scope.addMessage = function() {
+    $scope.messages.$add({
+      id: $scope.data.id++,
+      que1: $scope.data.domanda1,
+      ans10: $scope.data.risposta10,
+      ans11: $scope.data.risposta11,
+      ans12: $scope.data.risposta12,
+      ans13: $scope.data.risposta13,
+      ans14: $scope.data.risposta14,
+      que2: $scope.data.domanda2,
+      ans20: $scope.data.risposta20,
+      ans21: $scope.data.risposta21,
+      ans22: $scope.data.risposta22,
+      ans23: $scope.data.risposta23,
+      ans24: $scope.data.risposta24,
+      que3: $scope.data.domanda3,
+      ans30: $scope.data.risposta30,
+      ans31: $scope.data.risposta31,
+      ans32: $scope.data.risposta32,
+      ans33: $scope.data.risposta33,
+      ans34: $scope.data.risposta34,
+       que4: $scope.data.domanda4,
+      ans40: $scope.data.risposta40,
+      ans41: $scope.data.risposta41,
+      ans42: $scope.data.risposta42,
+      ans43: $scope.data.risposta43,
+      ans44: $scope.data.risposta44
+     
+   
       
-      // add new items to the array
-      // the message is automatically added to our Firebase database!
-      $scope.addMessage = function() {
-        $scope.messages.$add({
-            id: $scope.data.id++,
-          que1: $scope.data.domanda1,
-          ans10: $scope.data.risposta10,
-          ans11: $scope.data.risposta11,
-          ans12: $scope.data.risposta12,
-          ans13: $scope.data.risposta13,
-          ans14: $scope.data.risposta14,
-          que2: $scope.data.domanda2,
-          ans20: $scope.data.risposta20,
-          ans21: $scope.data.risposta21,
-          ans22: $scope.data.risposta22,
-          ans23: $scope.data.risposta23,
-          ans24: $scope.data.risposta24,
-          que3: $scope.data.domanda3,
-          ans30: $scope.data.risposta30,
-          ans31: $scope.data.risposta31,
-          ans32: $scope.data.risposta32,
-          ans33: $scope.data.risposta33,
-          ans34: $scope.data.risposta34,
-           que4: $scope.data.domanda4,
-          ans40: $scope.data.risposta40,
-          ans41: $scope.data.risposta41,
-          ans42: $scope.data.risposta42,
-          ans43: $scope.data.risposta43,
-          ans44: $scope.data.risposta44,
-          que5: $scope.data.domanda5,
-          ans50: $scope.data.risposta50,
-          ans51: $scope.data.risposta51,
-          ans52: $scope.data.risposta52,
-          ans53: $scope.data.risposta53,
-          ans54: $scope.data.risposta54
-          
-          
-        });
-        
+      
+    });
+    
+$scope.data.message = '';
 
 
 
@@ -639,7 +590,7 @@ function ($scope, $stateParams) {
 
 };
 
-var ref = firebase.database().ref().child("Imelda");
+var ref = firebase.database().ref().child("messages2");
       // create a synchronized array
       $scope.messages = $firebaseArray(ref);
 
@@ -658,7 +609,7 @@ var ref = firebase.database().ref().child("Imelda");
 
 };
 
-var ref = firebase.database().ref().child("Imelda1");
+var ref = firebase.database().ref().child("messages");
       // create a synchronized array
       $scope.messages = $firebaseArray(ref);
 
@@ -677,7 +628,7 @@ var ref = firebase.database().ref().child("Imelda1");
 
 };
 
-var ref = firebase.database().ref().child("Imelda2");
+var ref = firebase.database().ref().child("messages1");
       // create a synchronized array
       $scope.messages = $firebaseArray(ref);
 

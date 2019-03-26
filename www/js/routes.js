@@ -9,10 +9,14 @@ angular.module('app.routes', [])
   $stateProvider
     
 
-      .state('page23', {
+      .state('tabsController.page23', {
     url: '/page23',
-    templateUrl: 'templates/page23.html',
-    controller: 'page23Ctrl'
+    views: {
+      'tab2': {
+        templateUrl: 'templates/page23.html',
+        controller: 'page23Ctrl'
+      }
+    }
   })
 
   .state('tabsController.page3', {
@@ -38,7 +42,7 @@ angular.module('app.routes', [])
   .state('tabsController.page6', {
     url: '/page6',
     views: {
-      'tab2': {
+      'tab6': {
         templateUrl: 'templates/page6.html',
         controller: 'page6Ctrl'
       }
@@ -123,10 +127,10 @@ angular.module('app.routes', [])
     controller: 'page11Ctrl'
   })
 
-  .state('QA', {
+  .state('page20', {
     url: '/page20',
-    templateUrl: 'templates/QA.html',
-    controller: 'QACtrl'
+    templateUrl: 'templates/page20.html',
+    controller: 'page20Ctrl'
   })
 
   .state('page13', {
@@ -216,7 +220,7 @@ angular.module('app.routes', [])
     controller: 'page30Ctrl'
   })
 
-$urlRouterProvider.otherwise('/page1/page4')
+$urlRouterProvider.otherwise('/page1/page23')
 
 
 });

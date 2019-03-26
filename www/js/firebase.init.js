@@ -4,10 +4,12 @@ angular.module('firebaseConfig', ['firebase'])
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyCvhYnB6G3cc7tQxVxkoCDn6lyO9mObkoM",
-    authDomain: "defino-7d09f.firebaseapp.com",
-    databaseURL: "https://defino-7d09f.firebaseio.com",
-    storageBucket: "defino-7d09f.appspot.com",
+
+    apiKey: "AIzaSyADKcdYdrcHbarC3B4UkL0McGkaTYcK0as",
+    authDomain: "vidtutapp.firebaseapp.com",
+    databaseURL: "https://vidtutapp.firebaseio.com",
+    storageBucket: "vidtutapp.appspot.com"
+   
   };
   firebase.initializeApp(config);
 

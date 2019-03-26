@@ -8,7 +8,7 @@
     </div>
     <form id="C-form3" class="list">
       <label class="item item-select" id="C-select3">
-        <span class="input-label">請選擇</span>
+        <span class="input-label">scegli</span>
         <select ng-repeat="message in messages" ng-model="data.choice1">
           <option></option>
           <option>{{message.ans10}}</option>
@@ -26,7 +26,7 @@
     </div>
     <form id="C-form4" class="list">
       <label class="item item-select" id="C-select8">
-        <span class="input-label">請選擇</span>
+        <span class="input-label">scegli</span>
         <select ng-repeat="message in messages" ng-model="data.choice2">
           <option></option>
           <option>{{message.ans20}}</option>
@@ -44,7 +44,7 @@
     </div>
     <form id="C-form5" class="list">
       <label class="item item-select" id="C-select7">
-        <span class="input-label">請選擇</span>
+        <span class="input-label">scegli</span>
         <select ng-repeat="message in messages" ng-model="data.choice3">
           <option></option>
           <option>{{message.ans30}}</option>
@@ -62,7 +62,7 @@
     </div>
     <form id="C-form6" class="list">
       <label class="item item-select" id="C-select6">
-        <span class="input-label">請選擇</span>
+        <span class="input-label">scegli</span>
         <select ng-repeat="message in messages" ng-model="data.choice4">
           <option></option>
           <option>{{message.ans40}}</option>
@@ -80,7 +80,7 @@
     </div>
     <form id="C-form7" class="list">
       <label class="item item-select" id="C-select5">
-        <span class="input-label">請選擇</span>
+        <span class="input-label">scegli</span>
         <select ng-repeat="message in messages" ng-model="data.choice5">
           <option></option>
           <option>{{message.ans50}}</option>
@@ -93,7 +93,19 @@
     </form>
     <div class="spacer" style="width: 300px; height: 32px;"></div>
     <a ui-sref="C2({&quot;choice1&quot;:&quot;&quot;+data.choice1+&quot;&quot;,&quot;choice2&quot;:&quot;&quot;+data.choice2+&quot;&quot;,&quot;choice3&quot;:&quot;&quot;+data.choice3+&quot;&quot;,&quot;choice4&quot;:&quot;&quot;+data.choice4+&quot;&quot;,&quot;choice5&quot;:&quot;&quot;+data.choice5+&quot;&quot;})"
-      id="C-button24" class="button button-positive button-block">總成績</a>
+      id="C-button24" class="button button-positive button-block">scegli</a>
     <div class="spacer" style="width: 300px; height: 32px;"></div>
+
+    <form ng-submit="addMessage()">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="What do you need to do?" ng-model="data.message">
+        </label>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive">Create Task</button>
+      </div>
+    </form>
+
   </ion-content>
 </ion-view>

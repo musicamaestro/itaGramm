@@ -95,5 +95,19 @@
     <a ui-sref="B2({&quot;choice1&quot;:&quot;&quot;+data.choice1+&quot;&quot;,&quot;choice2&quot;:&quot;&quot;+data.choice2+&quot;&quot;,&quot;choice3&quot;:&quot;&quot;+data.choice3+&quot;&quot;,&quot;choice4&quot;:&quot;&quot;+data.choice4+&quot;&quot;,&quot;choice5&quot;:&quot;&quot;+data.choice5+&quot;&quot;})"
       id="B-button25" class="button button-positive button-block">總成績</a>
     <div class="spacer" style="width: 300px; height: 32px;"></div>
+
+   
+
+    <form ng-submit="addMessage()">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="What do you need to do?" ng-model="data.message">
+        </label>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive">Create Task</button>
+      </div>
+    </form>
+
   </ion-content>
 </ion-view>
